@@ -1,0 +1,13 @@
+D:\DA2\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+D:\DA2\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+D:\DA2\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+D:\DA2\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojAssemblyReference.cache
+D:\DA2\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.DangNhap.resources
+D:\DA2\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.GiaoDienChinh.resources
+D:\DA2\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
+D:\DA2\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Sach.resources
+D:\DA2\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.TimKiem.resources
+D:\DA2\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.TrangChu.resources
+D:\DA2\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.cache
+D:\DA2\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+D:\DA2\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
