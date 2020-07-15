@@ -537,6 +537,11 @@ as
 	select * from sach 
 	where tensach=@tensach
 go
+create proc timkiemdocgia(@tendocgia nvarchar(20))
+as
+	select * from docgia 
+	where tendocgia like '%'+ @tendocgia + '%'
+go
 
 --Tìm kiếm theo mã sách
 create proc timkiemsach1(@masach varchar(8))

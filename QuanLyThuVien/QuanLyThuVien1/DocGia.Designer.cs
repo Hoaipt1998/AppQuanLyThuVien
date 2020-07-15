@@ -140,6 +140,7 @@
             // 
             // dgvDG
             // 
+            this.dgvDG.BackgroundColor = System.Drawing.Color.White;
             this.dgvDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDG.Location = new System.Drawing.Point(250, 87);
             this.dgvDG.Name = "dgvDG";

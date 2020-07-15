@@ -89,6 +89,7 @@
             this.tbMK.Name = "tbMK";
             this.tbMK.Size = new System.Drawing.Size(158, 25);
             this.tbMK.TabIndex = 4;
+            this.tbMK.Tag = "*";
             // 
             // label3
             // 

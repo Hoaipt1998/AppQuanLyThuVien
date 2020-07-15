@@ -10,7 +10,7 @@ namespace QuanLyThuVien1.DB_layer
 {
     class DBMain
     {
-        string ConnStr = "Data Source=HOALE;Initial Catalog=QuanLyThuVien;Integrated Security=True";
+        string ConnStr = "Data Source=(Local);Initial Catalog=QuanLyThuVien;Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;

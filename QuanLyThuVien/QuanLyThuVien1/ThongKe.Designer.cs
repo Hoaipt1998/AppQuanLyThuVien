@@ -54,6 +54,7 @@
             // 
             // dgvTK
             // 
+            this.dgvTK.BackgroundColor = System.Drawing.Color.White;
             this.dgvTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTK.Location = new System.Drawing.Point(12, 184);
             this.dgvTK.Name = "dgvTK";
