@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoiMatKhau));
             this.label2 = new System.Windows.Forms.Label();
             this.tbRMK = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonThoat = new System.Windows.Forms.Button();
+            this.buttonXacNhan = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbMK = new System.Windows.Forms.TextBox();
@@ -42,58 +42,58 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 144);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(66, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 17);
+            this.label2.Size = new System.Drawing.Size(158, 20);
             this.label2.TabIndex = 86;
             this.label2.Text = "Nhập lại mật khẩu:";
             // 
             // tbRMK
             // 
-            this.tbRMK.Location = new System.Drawing.Point(176, 143);
+            this.tbRMK.Location = new System.Drawing.Point(240, 145);
             this.tbRMK.Multiline = true;
             this.tbRMK.Name = "tbRMK";
             this.tbRMK.Size = new System.Drawing.Size(182, 28);
             this.tbRMK.TabIndex = 85;
             // 
-            // button2
+            // buttonThoat
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Teal;
-            this.button2.Location = new System.Drawing.Point(159, 197);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 31);
-            this.button2.TabIndex = 83;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonThoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonThoat.BackgroundImage")));
+            this.buttonThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonThoat.ForeColor = System.Drawing.Color.Teal;
+            this.buttonThoat.Location = new System.Drawing.Point(506, 145);
+            this.buttonThoat.Name = "buttonThoat";
+            this.buttonThoat.Size = new System.Drawing.Size(90, 31);
+            this.buttonThoat.TabIndex = 83;
+            this.buttonThoat.Text = "Thoát";
+            this.buttonThoat.UseVisualStyleBackColor = true;
+            this.buttonThoat.Click += new System.EventHandler(this.buttonThoat_Click);
             // 
-            // button1
+            // buttonXacNhan
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Teal;
-            this.button1.Location = new System.Drawing.Point(270, 197);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 31);
-            this.button1.TabIndex = 84;
-            this.button1.Text = "Xác nhận";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonXacNhan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonXacNhan.BackgroundImage")));
+            this.buttonXacNhan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonXacNhan.ForeColor = System.Drawing.Color.Teal;
+            this.buttonXacNhan.Location = new System.Drawing.Point(506, 85);
+            this.buttonXacNhan.Name = "buttonXacNhan";
+            this.buttonXacNhan.Size = new System.Drawing.Size(90, 31);
+            this.buttonXacNhan.TabIndex = 84;
+            this.buttonXacNhan.Text = "Xác nhận";
+            this.buttonXacNhan.UseVisualStyleBackColor = true;
+            this.buttonXacNhan.Click += new System.EventHandler(this.buttonXacNhan_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Teal;
-            this.label6.Location = new System.Drawing.Point(135, 21);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(272, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 22);
+            this.label6.Size = new System.Drawing.Size(175, 25);
             this.label6.TabIndex = 82;
             this.label6.Text = "ĐỔI MẬT KHẨU";
             // 
@@ -101,16 +101,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 89);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(66, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 17);
+            this.label1.Size = new System.Drawing.Size(168, 20);
             this.label1.TabIndex = 81;
             this.label1.Text = "Nhập mật khẩu mới:";
             // 
             // tbMK
             // 
-            this.tbMK.Location = new System.Drawing.Point(176, 88);
+            this.tbMK.Location = new System.Drawing.Point(240, 85);
             this.tbMK.Multiline = true;
             this.tbMK.Name = "tbMK";
             this.tbMK.Size = new System.Drawing.Size(182, 28);
@@ -120,13 +120,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::QuanLyThuVien1.Properties.Resources.hinh_nen_card_visit_13_;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(526, 304);
+            this.ClientSize = new System.Drawing.Size(674, 377);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbRMK);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonThoat);
+            this.Controls.Add(this.buttonXacNhan);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbMK);
@@ -142,8 +142,8 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbRMK;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonThoat;
+        private System.Windows.Forms.Button buttonXacNhan;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbMK;

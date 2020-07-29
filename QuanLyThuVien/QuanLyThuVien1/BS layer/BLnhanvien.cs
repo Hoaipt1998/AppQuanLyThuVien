@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyThuVien1.Builder;
 
 namespace QuanLyThuVien1.BS_layer
 {
@@ -26,16 +27,29 @@ namespace QuanLyThuVien1.BS_layer
             string xoanv = @"exec dbo.xoanv N'" + manv + "'";
             return db.MyExecuteNonQuery(xoanv, CommandType.Text, ref err);
         }
-        public bool themnvn(string manv, string tk, string mk, string loai,string tennv,string diachi,string sex, ref string err)
+        //public bool themnvn(string manv, string tk, string mk, string loai,string tennv,string diachi,string sex, ref string err)
+        //{
+        //    string ktnv = @"exec dbo.kiemtranv N'" + manv + "'";
+        //    string themnv = @"exec dbo.themnv N'" + manv + "',N'" + tk + "',N'" +mk + "',N'" + loai + "',N'" + tennv + "',N'" + diachi + "',N'" + sex + "'";
+        //    DataTable dt = db.ExecuteQueryDataTable(ktnv, CommandType.Text);
+        //    if (dt.Rows.Count == 0)
+        //    {
+        //        return db.MyExecuteNonQuery(themnv, CommandType.Text, ref err);
+        //    }
+        //    else return false;
+        //}
+        public bool themnvn(controllerNhanVien ctnhanvien, ref string err)
         {
-            string ktnv = @"exec dbo.kiemtranv N'" + manv + "'";
-            string themnv = @"exec dbo.themnv N'" + manv + "',N'" + tk + "',N'" +mk + "',N'" + loai + "',N'" + tennv + "',N'" + diachi + "',N'" + sex + "'";
+            string ktnv = @"exec dbo.kiemtranv N'" + ctnhanvien.MaNhanVien + "'";
+            string themnv = @"exec dbo.themnv N'" + ctnhanvien.MaNhanVien + "',N'" + ctnhanvien.TaiKhoan + "',N'" + ctnhanvien.MatKhau + "',N'" + ctnhanvien.Loai + "',N'" + ctnhanvien.TenNhanVien + "',N'" + ctnhanvien.DiaChi + "',N'" + ctnhanvien.GioiTinh + "'";
             DataTable dt = db.ExecuteQueryDataTable(ktnv, CommandType.Text);
-            if (dt.Rows.Count == 0)
+            if (dt.Rows.Count >0 )
             {
-                return db.MyExecuteNonQuery(themnv, CommandType.Text, ref err);
+                MessageBox.Show("Da co ID nay roi", " Da Ton Tai");
+                return false;
+               
             }
-            else return false;
+            else return db.MyExecuteNonQuery(themnv, CommandType.Text, ref err);
         }
         public bool suanv(string manv,string loai, string tennv, string diachi,string sex, ref string err)
         {
@@ -50,7 +64,7 @@ namespace QuanLyThuVien1.BS_layer
                 DataTable dt = db.ExecuteQueryDataTable(kttk, CommandType.Text);
                 if (dt.Rows.Count >0)
                 {
-                    MessageBox.Show("Bạn đã đăng nhập thành công");
+                   
                     string h = dt.Rows[0]["loai"].ToString();
                     m = dt.Rows[0]["manhanvien"].ToString();
                     if (h == "1")
@@ -81,6 +95,11 @@ namespace QuanLyThuVien1.BS_layer
         {
             string doimatkhau = @"exec dbo.doimatkhau N'" + m + "',N'" + mk + "'";
             return db.MyExecuteNonQuery(doimatkhau, CommandType.Text,ref err);
+        }
+        public DataSet laynhanvienId(string manhanvien)
+        {
+            string laynhanvienId = @"exec dbo.kiemtranv  N'" + manhanvien + "'";
+            return db.ExecuteQueryDataSet(laynhanvienId, CommandType.Text);
         }
     }
 }

@@ -23,14 +23,22 @@ namespace QuanLyThuVien1
         private void button1_Click(object sender, EventArgs e)
         {
 
-            this.Hide();
-            GiaoDienChinh gd = new GiaoDienChinh();
-            this.Close();
-            gd.ShowDialog();
+           
           
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void ThongKe_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonTimKiem_Click(object sender, EventArgs e)
         {
             DateTime dau = dtp1.Value;
             DateTime sau = dtp2.Value;
@@ -38,11 +46,14 @@ namespace QuanLyThuVien1
             string b = sau.ToString("yyyy-MM-dd");
             ds = pm.thongke(a, b);
             dgvTK.DataSource = ds.Tables[0];
-
         }
 
-        private void ThongKe_Load(object sender, EventArgs e)
+        private void buttonTroLai_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            GiaoDienChinh gd = new GiaoDienChinh();
+            this.Close();
+            gd.ShowDialog();
         }
     }
 }

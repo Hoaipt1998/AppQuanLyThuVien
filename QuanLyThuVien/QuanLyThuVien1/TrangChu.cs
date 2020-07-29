@@ -42,6 +42,11 @@ namespace QuanLyThuVien1
 
         private void button1_Click(object sender, EventArgs e)
         {
+         
+        }
+
+        private void buttonTimKiem_Click(object sender, EventArgs e)
+        {
             this.Hide();
             Form tk = new TimKiem();
             tk.ShowDialog();

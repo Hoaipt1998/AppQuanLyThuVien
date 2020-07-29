@@ -29,6 +29,13 @@ namespace QuanLyThuVien1
         }
         private void load()
         {
+            if (DangNhap.h == 3)
+            {
+                buttonSua.Enabled = false;
+                buttonXoa.Enabled = false;
+                buttonThem.Enabled = false;
+                buttonLuu.Enabled = false;
+            }
             tbID.Enabled = false;
             tbTLS.Enabled = false;
             ds = new DataSet();
@@ -36,7 +43,23 @@ namespace QuanLyThuVien1
             dgvLS.DataSource = ds.Tables[0];
        }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void dgvLS_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = dgvLS.CurrentCell.RowIndex;
+            tbID.Text = dgvLS.Rows[r].Cells[0].Value.ToString();
+            tbTLS.Text = dgvLS.Rows[r].Cells[1].Value.ToString();
+        }
+
+      
+
+      
+        private void buttonTiemKiem_Click(object sender, EventArgs e)
+        {
+            ds = ls.timkiem(tbTK.Text);
+            dgvLS.DataSource = ds.Tables[0];
+        }
+
+        private void buttonThem_Click(object sender, EventArgs e)
         {
             them = true;
             sua = false;
@@ -44,14 +67,14 @@ namespace QuanLyThuVien1
             tbID.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSua_Click(object sender, EventArgs e)
         {
             sua = true;
             them = false;
             tbTLS.Enabled = true;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonXoa_Click(object sender, EventArgs e)
         {
             DialogResult a = MessageBox.Show("Bạn có muốn xóa loại sách này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (a == DialogResult.Yes)
@@ -65,44 +88,37 @@ namespace QuanLyThuVien1
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonLuu_Click(object sender, EventArgs e)
         {
-            if (them)
+            if (tbID.Text == "" || tbTLS.Text == "")
             {
-                ls.themloaisach(tbID.Text,tbTLS.Text, ref err);
-                them = false;
-                load();
+                MessageBox.Show("Error", "Thieu Thong TIn", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (sua)
+            else
             {
-                ls.sualoaisach(tbID.Text,tbTLS.Text, ref err);
-                sua = false;
-                load();
+                if (them)
+                {
+                    ls.themloaisach(tbID.Text, tbTLS.Text, ref err);
+                    them = false;
+                    load();
+                }
+                else if (sua)
+                {
+                    ls.sualoaisach(tbID.Text, tbTLS.Text, ref err);
+                    sua = false;
+                    load();
+                }
+                tbID.Enabled = false;
+                tbTLS.Enabled = false;
             }
-            tbID.Enabled = false;
-            tbTLS.Enabled = false;
-
         }
 
-        private void dgvLS_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int r = dgvLS.CurrentCell.RowIndex;
-            tbID.Text = dgvLS.Rows[r].Cells[0].Value.ToString();
-            tbTLS.Text = dgvLS.Rows[r].Cells[1].Value.ToString();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonThoat_Click(object sender, EventArgs e)
         {
             this.Hide();
             GiaoDienChinh gd = new GiaoDienChinh();
             gd.ShowDialog();
             this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ds = ls.timkiem(tbTK.Text);
-            dgvLS.DataSource = ds.Tables[0];
         }
     }
 }

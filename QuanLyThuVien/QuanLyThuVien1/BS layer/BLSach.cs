@@ -5,16 +5,44 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyThuVien1.BS_layer
 {
     class BLsach
     {
         DBMain db = null;
+        private static BLsach instance;
+        private ISearchAlgorithm _Search;
+
+        public static BLsach Instance
+        {
+            get
+            {
+                if (instance == null) instance = new BLsach();
+                return instance;
+            }
+
+            set
+            {
+                instance = value;
+            }
+        }
+
         public BLsach()
         {
             db = new DBMain();
         }
+        public BLsach(ISearchAlgorithm searchAlgorithm)
+        {
+            this._Search = searchAlgorithm;
+        }
+        public void SetSearchAlgorithm(ISearchAlgorithm searchAlgorithm)
+        {
+            this._Search = searchAlgorithm;
+
+        }
+
         public DataSet Laysach()
         {
             string laysach = @"exec dbo.thongtinsach";
@@ -27,12 +55,14 @@ namespace QuanLyThuVien1.BS_layer
         }
         public bool themsach(string masach, string tensach,string tenloaisach, int soluong, string make, ref string err)
         {
+
             string kiemtrasach = @"exec dbo.kiemtrasach N'" + masach + "'";
             string themsach = @"exec dbo.themsach N'" + masach + "',N'" + tensach + "',N'" + tenloaisach + "',N'" + soluong + "',N'" + make + "'";
 
             DataTable dt = db.ExecuteQueryDataTable(kiemtrasach, CommandType.Text);
             if (dt.Rows.Count >0)
             {
+                MessageBox.Show("Da co ID nay roi", " Da Ton Tai");
                 return false;
             }
             else return db.MyExecuteNonQuery(themsach, CommandType.Text, ref err);
@@ -52,6 +82,14 @@ namespace QuanLyThuVien1.BS_layer
             string timkiem = @"exec dbo.timkiemsach1 N'" + masach + "'";
             return db.ExecuteQueryDataTable(timkiem, CommandType.Text);
         }
-       
+        public DataTable timsach(string tensach)
+        {
+            return _Search.search(tensach);
+        }
+        public DataSet laysachId(string masach)
+        {
+            string laysachID = @"exec dbo.kiemtrasach N'" + masach + "'";
+            return db.ExecuteQueryDataSet(laysachID, CommandType.Text);
+        }
     }
 }

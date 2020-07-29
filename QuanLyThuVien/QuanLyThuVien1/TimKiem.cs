@@ -13,31 +13,13 @@ namespace QuanLyThuVien1
 {
     public partial class TimKiem : Form
     {
-        DataTable dt = null;
         BLsach sach = new BLsach();
         public TimKiem()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form TC = new TrangChu();
-            TC.ShowDialog();
-            this.Close();
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            dt = new DataTable();
-            dt.Clear();
-            dt = sach.timkiem2(tbTK.Text);
-            dgvTK.DataSource = dt;
-            dgvTK.AutoResizeColumns();
-        }
-
+       
         private void dgvTK_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvTK.CurrentCell.RowIndex;
@@ -48,14 +30,35 @@ namespace QuanLyThuVien1
             tbSL.Text = dgvTK.Rows[r].Cells[4].Value.ToString();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+       
+        private void tbTK_TextChanged(object sender, EventArgs e)
         {
-            dt = new DataTable();
-            dt.Clear();
-           dt = sach.timkiem1(tbTK.Text);
-            dgvTK.DataSource = dt;
+
+        }
+
+        private void buttonTimKiemTen_Click(object sender, EventArgs e)
+        {
+            
+           
+            BLsach.Instance.SetSearchAlgorithm(new SearchTenSach());
+            DataTable tb = BLsach.Instance.timsach(tbTK.Text);
+            dgvTK.DataSource = tb;
             dgvTK.AutoResizeColumns();
         }
 
+        private void buttonTimKiemMa_Click(object sender, EventArgs e)
+        {
+            BLsach.Instance.SetSearchAlgorithm(new SearchLoaiSach());
+            DataTable tb = BLsach.Instance.timsach(tbTK.Text);
+            dgvTK.DataSource = tb;
+        }
+
+        private void buttonThoat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form TC = new TrangChu();
+            TC.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -21,30 +21,38 @@ namespace QuanLyThuVien1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(tbMK.Text!=tbRMK.Text)
-            {
-                MessageBox.Show("Mật khẩu xác thực không khớp, vui lòng nhập lại!!!");
-            }
-            else
-            {
-                bool loi=nv.doimatkhau(tbMK.Text, DangNhap.m, ref err);
-                if (loi)
-                {
-                    MessageBox.Show("Đổi mật khẩu thành công");
-                }
-                else MessageBox.Show("Đổi mật khẩu thất bại, xin hãy thử lại");
-            }    
-        }
+       
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonThoat_Click(object sender, EventArgs e)
         {
             this.Hide();
             TaiKhoan gd = new TaiKhoan();
             gd.ShowDialog();
             this.Close();
+        }
 
+        private void buttonXacNhan_Click(object sender, EventArgs e)
+        {
+            if (tbMK.Text == "" || tbRMK.Text == "")
+            {
+                MessageBox.Show("Error", "Thieu Thong TIn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (tbMK.Text != tbRMK.Text)
+                {
+                    MessageBox.Show("Mật khẩu xác thực không khớp, vui lòng nhập lại!!!");
+                }
+                else
+                {
+                    bool loi = nv.doimatkhau(tbMK.Text, DangNhap.m, ref err);
+                    if (loi)
+                    {
+                        MessageBox.Show("Đổi mật khẩu thành công");
+                    }
+                    else MessageBox.Show("Đổi mật khẩu thất bại, xin hãy thử lại");
+                }
+            }
         }
     }
 }

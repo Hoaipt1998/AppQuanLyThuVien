@@ -20,18 +20,12 @@ namespace QuanLyThuVien1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            GiaoDienChinh gd = new GiaoDienChinh();
-            gd.ShowDialog();
-            this.Close();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DoiMatKhau dk = new DoiMatKhau();
-            dk.ShowDialog();
-            this.Close();
+           
 
         }
         private void load()
@@ -45,6 +39,22 @@ namespace QuanLyThuVien1
         private void TaiKhoan_Load(object sender, EventArgs e)
         {
             load();
+        }
+
+        private void buttonDoiMK_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DoiMatKhau dk = new DoiMatKhau();
+            dk.ShowDialog();
+            this.Close();
+        }
+
+        private void buttonThoat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GiaoDienChinh gd = new GiaoDienChinh();
+            gd.ShowDialog();
+            this.Close();
         }
     }
 }

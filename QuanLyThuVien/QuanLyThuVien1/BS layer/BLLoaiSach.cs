@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyThuVien1.BS_layer
 {
@@ -33,6 +34,7 @@ namespace QuanLyThuVien1.BS_layer
             DataTable dt = db.ExecuteQueryDataTable(kiemtraloaisach, CommandType.Text);
             if (dt.Rows.Count>0)
             {
+                MessageBox.Show("Da co ID nay roi", " Da Ton Tai");
                 return false;
             }
             else return db.MyExecuteNonQuery(themloaisach, CommandType.Text, ref err);
@@ -46,6 +48,11 @@ namespace QuanLyThuVien1.BS_layer
         {
             string timkiem = @"exec dbo.timkiem N'" + maloaisach + "'";
             return db.ExecuteQueryDataSet(timkiem, CommandType.Text);
+        }
+        public DataSet layloaisachId(string maloaisach)
+        {
+            string layloaisachId = @"exec dbo.kiemtraloaisach  N'" + maloaisach + "'";
+            return db.ExecuteQueryDataSet(layloaisachId, CommandType.Text);
         }
     }
 }

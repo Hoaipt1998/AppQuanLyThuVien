@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKe));
             this.label6 = new System.Windows.Forms.Label();
             this.dgvTK = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonTimKiem = new System.Windows.Forms.Button();
+            this.buttonTroLai = new System.Windows.Forms.Button();
             this.dtp1 = new System.Windows.Forms.DateTimePicker();
             this.dtp2 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,46 +48,47 @@
             this.label6.ForeColor = System.Drawing.Color.Teal;
             this.label6.Location = new System.Drawing.Point(16, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(238, 22);
+            this.label6.Size = new System.Drawing.Size(224, 22);
             this.label6.TabIndex = 30;
-            this.label6.Text = "THỐNG KÊ THỔNG HỢP";
+            this.label6.Text = "THỐNG KÊ TỔNG HỢP";
             // 
             // dgvTK
             // 
+            this.dgvTK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTK.BackgroundColor = System.Drawing.Color.White;
             this.dgvTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTK.Location = new System.Drawing.Point(12, 184);
+            this.dgvTK.Location = new System.Drawing.Point(14, 120);
             this.dgvTK.Name = "dgvTK";
             this.dgvTK.Size = new System.Drawing.Size(845, 397);
             this.dgvTK.TabIndex = 17;
             // 
-            // button3
+            // buttonTimKiem
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button3.Location = new System.Drawing.Point(590, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 30);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Tìm kiếm";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonTimKiem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonTimKiem.BackgroundImage")));
+            this.buttonTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonTimKiem.Location = new System.Drawing.Point(590, 12);
+            this.buttonTimKiem.Name = "buttonTimKiem";
+            this.buttonTimKiem.Size = new System.Drawing.Size(146, 30);
+            this.buttonTimKiem.TabIndex = 16;
+            this.buttonTimKiem.Text = "Tìm kiếm";
+            this.buttonTimKiem.UseVisualStyleBackColor = true;
+            this.buttonTimKiem.Click += new System.EventHandler(this.buttonTimKiem_Click);
             // 
-            // button1
+            // buttonTroLai
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Location = new System.Drawing.Point(590, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 30);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Trở lại";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonTroLai.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonTroLai.BackgroundImage")));
+            this.buttonTroLai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonTroLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTroLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonTroLai.Location = new System.Drawing.Point(590, 56);
+            this.buttonTroLai.Name = "buttonTroLai";
+            this.buttonTroLai.Size = new System.Drawing.Size(146, 30);
+            this.buttonTroLai.TabIndex = 31;
+            this.buttonTroLai.Text = "Trở lại";
+            this.buttonTroLai.UseVisualStyleBackColor = true;
+            this.buttonTroLai.Click += new System.EventHandler(this.buttonTroLai_Click);
             // 
             // dtp1
             // 
@@ -129,17 +130,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::QuanLyThuVien1.Properties.Resources.hinh_nen_card_visit_13_;
+            this.AutoSize = true;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(871, 593);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtp2);
             this.Controls.Add(this.dtp1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonTroLai);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvTK);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonTimKiem);
             this.Name = "ThongKe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ThongKe";
@@ -154,8 +156,8 @@
 
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvTK;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonTimKiem;
+        private System.Windows.Forms.Button buttonTroLai;
         private System.Windows.Forms.DateTimePicker dtp1;
         private System.Windows.Forms.DateTimePicker dtp2;
         private System.Windows.Forms.Label label1;

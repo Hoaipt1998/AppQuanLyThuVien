@@ -37,12 +37,7 @@ namespace QuanLyThuVien1
             tbGT.Text = dgvNV.Rows[r].Cells[6].Value.ToString();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            DangKy dk = new DangKy();
-            dk.ShowDialog();
-          
-        }
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -63,22 +58,24 @@ namespace QuanLyThuVien1
             dgvNV.AutoResizeColumns();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+  
+       
+       
+       
+        private void buttonTiemKiemNV_Click(object sender, EventArgs e)
         {
-            DialogResult a = MessageBox.Show("Bạn có muốn xóa nhân viên này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(a==DialogResult.Yes)
-            {
-              bool h=  nv.xoanhanvien(tbID.Text,ref err);
-                if (h == false)
-                {
-                    MessageBox.Show("Bạn cần xóa những dữ liệu liên quan đến nhân viên này !!!");
-                }
-                load();
-            }
-            
+            ds = nv.timnhanvien(tbTK.Text);
+            dgvNV.DataSource = ds.Tables[0];
+            dgvNV.AutoResizeColumns();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonThem_Click(object sender, EventArgs e)
+        {
+            DangKy dk = new DangKy();
+            dk.ShowDialog();
+        }
+
+        private void buttonSua_Click(object sender, EventArgs e)
         {
             tbID.Enabled = true;
             tbLTK.Enabled = true;
@@ -87,13 +84,28 @@ namespace QuanLyThuVien1
             tbTNV.Enabled = true;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonXoa_Click(object sender, EventArgs e)
         {
-            nv.suanv(tbID.Text, tbLTK.Text, tbTNV.Text, tbDC.Text,tbGT.Text, ref err);
+            DialogResult a = MessageBox.Show("Bạn có muốn xóa nhân viên này", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (a == DialogResult.Yes)
+            {
+                bool h = nv.xoanhanvien(tbID.Text, ref err);
+                if (h == false)
+                {
+                    MessageBox.Show("Bạn cần xóa những dữ liệu liên quan đến nhân viên này !!!");
+                }
+                load();
+            }
+        }
+
+        private void buttonLuu_Click(object sender, EventArgs e)
+        {
+
+            nv.suanv(tbID.Text, tbLTK.Text, tbTNV.Text, tbDC.Text, tbGT.Text, ref err);
             load();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonThoat_Click(object sender, EventArgs e)
         {
             this.Hide();
             GiaoDienChinh gd = new GiaoDienChinh();
@@ -101,11 +113,39 @@ namespace QuanLyThuVien1
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonReload_Click(object sender, EventArgs e)
         {
-           ds= nv.timnhanvien(tbTK.Text);
-            dgvNV.DataSource = ds.Tables[0];
-            dgvNV.AutoResizeColumns();
+            load();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

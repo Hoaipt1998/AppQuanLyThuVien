@@ -35,11 +35,28 @@ namespace QuanLyThuVien1
             tbTenKe.Enabled = false;
             ds = new DataSet();
             ds = k.Layke();
+           
+
             dgvKS.DataSource = ds.Tables[0];
-            dgvKS.AutoResizeColumns();
+          
+            dgvKS.Columns[1].Width = 150;
+            //dgvKS.AutoResizeColumns();
         }
 
         private void button5_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+
+        private void KeSach_Load(object sender, EventArgs e)
+        {
+            load();
+        }
+
+       
+        private void buttonThem_Click(object sender, EventArgs e)
         {
             sua = false;
             tbID.Enabled = true;
@@ -47,7 +64,7 @@ namespace QuanLyThuVien1
             them = true;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void buttonSua_Click(object sender, EventArgs e)
         {
             them = false;
             tbID.Enabled = true;
@@ -55,39 +72,7 @@ namespace QuanLyThuVien1
             sua = true;
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            GiaoDienChinh gd = new GiaoDienChinh();
-            gd.ShowDialog();
-            this.Close();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            if(them)
-            {
-                k.themke(tbID.Text, tbTenKe.Text, ref err);
-                them = false;
-                load();
-            }   
-            else if(sua)
-            {
-                k.suake(tbID.Text, tbTenKe.Text, ref err);
-                sua = false;
-                load();
-            }
-            tbID.Enabled = false;
-            tbTenKe.Enabled = false;
-
-        }
-
-        private void KeSach_Load(object sender, EventArgs e)
-        {
-            load();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
+        private void buttonXoa_Click(object sender, EventArgs e)
         {
             DialogResult a = MessageBox.Show("Bạn có muốn xóa kệ sách này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (a == DialogResult.Yes)
@@ -99,6 +84,44 @@ namespace QuanLyThuVien1
                 }
                 load();
             }
+        }
+
+        private void buttonLuu_Click(object sender, EventArgs e)
+        {
+            if (tbID.Text == "" || tbTenKe.Text == "")
+            {
+                MessageBox.Show("Error", "Thieu Thong TIn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (them)
+                {
+                    k.themke(tbID.Text, tbTenKe.Text, ref err);
+                    them = false;
+                    load();
+                }
+                else if (sua)
+                {
+                    k.suake(tbID.Text, tbTenKe.Text, ref err);
+                    sua = false;
+                    load();
+                }
+                tbID.Enabled = false;
+                tbTenKe.Enabled = false;
+            }
+        }
+
+        private void buttonThoat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GiaoDienChinh gd = new GiaoDienChinh();
+            gd.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
